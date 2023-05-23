@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trading Economics API</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .header-row {
+            font-weight: bold;
+        }
+
+        .data-row:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Comparison of Data</h1>
+    <table>
+        <tr class="header-row">
+            <th>Country</th>
+            <th>Category</th>
+            <th>Date/Time</th>
+            <th>Value</th>
+            <th>Frequency</th>
+        </tr>
+        <% apiData.forEach(function (entry) { %>
+            <tr class="data-row">
+                <td>
+                    <%= entry.Country %>
+                </td>
+                <td>
+                    <%= entry.Category %>
+                </td>
+                <td>
+                    <%= entry.DateTime %>
+                </td>
+                <td>
+                    <%= entry.Value %>
+                </td>
+                <td>
+                    <%= entry.Frequency %>
+                </td>
+            </tr>
+            <% }); %>
+    </table>
+</body>
+
+</html>
